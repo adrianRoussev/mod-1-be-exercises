@@ -14,7 +14,7 @@ RSpec.describe Pirate do
 
   it 'is a scallywag by default' do
     pirate = Pirate.new('Jane')
-    expect(pirate.job).to eq('Scallywag')
+    expect(pirate.job).to eq('scallywag')
   end
 
   it 'is not always a scallywag' do
@@ -25,27 +25,27 @@ RSpec.describe Pirate do
   it 'is not cursed by default' do
     pirate = Pirate.new('Jack')
 
-    expect(pirate.cursed?).to be false
+    expect(pirate.cursed).to be false
 
     pirate.commit_heinous_act
-    expect(pirate.cursed?).to be false
+    expect(pirate.cursed).to be false
 
     pirate.commit_heinous_act
-    expect(pirate.cursed?).to be false
+    expect(pirate.cursed).to be false
 
     pirate.commit_heinous_act
-    expect(pirate.cursed?).to be true
+    expect(pirate.cursed).to be true
   end
 
-  it 'has a booty' do
-    # create a pirate
-    # check that the pirate starts with 0 booty
+  it 'has 0 booty' do
+    pirate = Pirate.new('Jack')
+    expect(pirate.booty).to eq(0)
   end
 
   it 'gets 100 booty for robbing a ship' do
-    # create a pirate
-    # rob some ships
-    # check that the pirate got 100 booty for each ship it robbed
+    pirate = Pirate.new('Jack')
+    pirate.rob_a_ship
+    expect(pirate.booty).to eq(100)
   end
 
 end

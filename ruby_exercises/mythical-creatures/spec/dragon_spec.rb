@@ -34,17 +34,17 @@ RSpec.describe Dragon do
 
   it 'was born hungry' do
     dragon = Dragon.new('Mnementh', :bronze, 'Flar')
-    expect(dragon.hungry?).to be true
+    expect(dragon.hungry).to be true
   end
 
   it 'eats a lot' do
     dragon = Dragon.new('Mnementh', :bronze, 'Flar')
-    expect(dragon.hungry?).to be true
+    expect(dragon.hungry).to be true
     dragon.eat
-    expect(dragon.hungry?).to be true
+    expect(dragon.hungry).to be true
     dragon.eat
-    expect(dragon.hungry?).to be true
+    expect(dragon.hungry).to be true
     dragon.eat
-    expect(dragon.hungry?).to be false
+    expect(dragon.hungry).to be false
   end
 end
